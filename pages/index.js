@@ -51,205 +51,43 @@ React Finland 2021 conference tickets are now available:
 `;
 */
 
+/*
 const secondary = `
 By the way, we proudly follow [Berlin code of conduct](http://berlincodeofconduct.org/).
 
 [Join React Finland Slack to connect with other attendees!](https://join.slack.com/t/react-finland/shared_invite/enQtMzQ0NDM1ODczMjE2LTI3MjZlZGNjNTNkOTU5N2E1OWYxYzY0MWE0Y2NiNWMxMWZiMWEyYjc4MmM1ZDQwZmFhOTkyODBmM2E4NjcxZjM)
 `;
+*/
 
-const Index = ({ conference }) => (
-  <>
-    <section className="intro intro_home">
-      <div className="intro--main">
-        <Markdown source={intro} />
-        {/*<iframe
-          title="Mini-conf #05 - Performance"
-          width="100%"
+const domain = "deploy-preview-79--react-finland.netlify.app"; // Try localhost locally
+const id = "mw-1YdqZLQo"; // For youtube video id
+
+const Index = () => (
+  <div className="intro" style={{ width: "100%" }}>
+    <div className="intro--main" style={{ width: "100%" }}>
+      <AnchorHeader level={2}>Past vodcasts</AnchorHeader>
+      <section className="flex-row">
+        <iframe
+          title="Vodcast – Test stream"
+          width="60%"
           height="400"
-          src="https://www.youtube.com/embed/5ZHJlcGT2lk"
+          src={`https://www.youtube.com/embed/${id}`}
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        />*/}
-
-        {/*<Markdown source={pastEvents} />*/}
-        {/*<Markdown source={rf2021} />
-        <AnchorHeader level={3}>See how the 2019 event went</AnchorHeader>
+        />
         <iframe
-          src="https://www.youtube.com/embed/BO_osndeLII"
-          width="100%"
+          title="Vodcast – Test stream chat"
+          width="40%"
           height="400"
+          src={`https://www.youtube.com/live_chat?v=${id}&embed_domain=${domain}`}
           frameBorder="0"
-          title="React Finland 2019"
-/>*/}
-      </div>
-      <aside className="intro--aside">
-        <Markdown source={secondary} />
-      </aside>
-    </section>
-    {conference && conference.mcs && conference.mcs.length > 0 && (
-      <>
-        <AnchorHeader level={2}>MCs</AnchorHeader>
-        <div className="grid--full speakers">
-          <Contacts items={conference.mcs} render={ContactMini} />
-        </div>
-      </>
-    )}
-    {conference &&
-      conference.keynoteSpeakers &&
-      conference.keynoteSpeakers.length > 0 && (
-        <>
-          <AnchorHeader level={2}>Keynotes</AnchorHeader>
-          <div className="grid--full speakers">
-            <Contacts items={conference.keynoteSpeakers} render={ContactMini} />
-          </div>
-        </>
-      )}
-    {conference && conference.speakers && conference.speakers.length > 0 && (
-      <>
-        <AnchorHeader level={2}>Speakers</AnchorHeader>
-        <div className="grid--full speakers">
-          <Contacts items={conference.speakers} render={ContactMini} />
-        </div>
-      </>
-    )}
-    {/*
-    {conference &&
-      conference.lightningTalkSpeakers &&
-      conference.lightningTalkSpeakers.length > 0 && (
-        <>
-          <AnchorHeader level={2}>Lightning Talks</AnchorHeader>
-          <div className="grid--full speakers">
-            <Contacts
-              items={conference.lightningTalkSpeakers}
-              render={ContactMini}
-            />
-          </div>
-        </>
-      )}*/}
-    {conference &&
-      conference.workshopInstructors &&
-      conference.workshopInstructors.length > 0 && (
-        <>
-          <AnchorHeader level={2}>Workshops</AnchorHeader>
-          <div className="grid--full speakers">
-            <Contacts
-              items={conference.workshopInstructors}
-              render={ContactMini}
-            />
-          </div>
-        </>
-      )}
-    <div className="buy-container">
-      <a
-        className="buy-button"
-        href="https://fienta.com/react-finland-2021?281fadadf5cff4be80232837e3ae916f"
-      >
-        Register to the 2021 event
-      </a>
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </section>
     </div>
-    <div className="intro">
-      <div className="intro--main">
-        <AnchorHeader level={2}>Past vodcasts</AnchorHeader>
-        <section className="flex-column">
-          <iframe
-            title="Vodcast #05 – Design tools"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/AuwpOsrzHC8"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Vodcast #04 – Next.js"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/mMU-j0WoTCs"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Vodcast #03 – Full Stack React"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/ee3riQ0aVbs"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Vodcast #02 – Accessibility"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/jouctaXwpdU"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Vodcast #01 – Components"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/o_TqhovGSjk"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </section>
-
-        <AnchorHeader level={2}>Past mini-confs</AnchorHeader>
-        <section className="flex-column">
-          <iframe
-            title="Mini-conf #05 - Performance"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/5ZHJlcGT2lk"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Mini-conf #04 - Lessons learned"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/i9D-Gh8QH2U"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Mini-conf #03 - Design systems"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/gJ56-lwB8K0"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Mini-conf #02 - State management"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/CFe6rMUxpoM"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            title="Mini-conf #01 - Documentation"
-            width="100%"
-            height="200"
-            src="https://www.youtube.com/embed/sN01JuUIrsw"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </section>
-      </div>
-    </div>
-  </>
+  </div>
 );
 
 export default connect(
